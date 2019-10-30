@@ -1,0 +1,237 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    background: #200122;
+    background: -webkit-linear-gradient(to right, #9ac6fc, #6a0794);
+    background: linear-gradient(to right, #9ac6fc, #6a0794);
+}
+
+#thumbnail-preview-indicators {
+    position: relative;
+    overflow: hidden;
+}
+
+
+    #thumbnail-preview-indicators {
+        height: 480px;
+    }
+
+        #thumbnail-preview-indicators .carousel-inner .item .carousel-caption {
+            top: 20%;
+            bottom: inherit;
+        }
+
+        #thumbnail-preview-indicators .carousel-indicators li,
+        #thumbnail-preview-indicators .carousel-indicators li.active {
+            position: relative;
+            width: 100px;
+            height: 8px;
+        }
+
+            #thumbnail-preview-indicators .carousel-indicators li > .thumbnail {
+                position: absolute;
+                top: 0;
+                width: 100px;
+                display: none;
+                opacity: 0;
+                left: 50%;
+                margin-top: -80px;
+                margin-left: -50px;
+            }
+
+
+             
+
+
+
+        #thumbnail-preview-indicators .carousel-indicators li > .thumbnail {
+            width: 50px;
+            left: 50%;
+            margin-top: -50px;
+            margin-left: -25px;
+        }
+}
+
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  /* Set the fixed height of the footer here */
+  height: 30px;
+  line-height: 60px; /* Vertically center the text there */
+}
+
+
+.box {
+    overflow: hidden;
+    box-shadow: 0 0 3px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+.box:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-image: repeating-linear-gradient(45deg,transparent,transparent 10px,rgba(0,0,0,0.1) 10px,rgba(0,0,0,0.1) 20px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.3s ease 0s;
+}
+
+.box:hover:before {
+    opacity: 1;
+}
+
+.box img {
+    width: 100%;
+    height: auto;
+    transform: scale(1.2);
+    transition: all 0.3s ease 0s;
+}
+
+.box:hover img {
+    filter: sepia(100%) grayscale(100%);
+    transform: scale(1);
+}
+
+.box .box-content {
+    width: 70%;
+    height: 100%;
+    padding: 15px 0 0 15px;
+    background: rgba(0,0,0,0.7);
+    position: absolute;
+    top: 0;
+    left: -100%;
+    transition: all 0.3s ease 0s;
+}
+
+.box:hover .box-content {
+    left: 0;
+}
+
+    .box .title {
+        font-size: 20px;
+        font-weight: 600;
+        font-style: italic;
+        color: #fff;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        text-shadow: 0 0 2px #73b0fa;
+        margin: 0;
+    }
+
+.box .post {
+    font-size: 14px;
+    color: #fff;
+}
+
+.box .icon {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    right: -100%;
+    z-index: 1;
+    transform: translateY(-50%);
+    transition: all 0.3s ease 0s;
+}
+
+.box:hover .icon {
+    right: 25px;
+}
+
+    .box .icon:after {
+        content: "";
+        width: 130%;
+        height: 100%;
+        background: rgba(115,176,250,0.7);
+        position: absolute;
+        top: 0;
+        left: 50%;
+        z-index: -1;
+    }
+
+.box .icon li {
+    display: block;
+    margin: 10px 0;
+}
+
+    .box .icon li a {
+        display: block;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        background: #fff;
+        font-size: 18px;
+        color: #73b0fa;
+        box-shadow: 0 0 10px rgba(0,0,0,0.4) inset;
+        transition: all 0.3s ease 0s;
+    }
+
+        .box .icon li a:hover {
+            background: #73b0fa;
+            color: #fff;
+            box-shadow: 0 0 10px #73b0fa;
+        }
+
+@media only screen and (max-width:990px) {
+    .box {
+        margin-bottom: 30px;
+    }
+}
+
+
+
+
