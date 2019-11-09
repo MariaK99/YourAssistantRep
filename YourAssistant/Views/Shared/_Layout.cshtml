@@ -28,39 +28,121 @@
             <div class="collapse navbar-collapse justify-content-end" id="navigation">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index"><i class="nc-icon nc-book-bookmark"></i>Главная</a>
+                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index"></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Games"><i class="nc-icon nc-book-bookmark"></i>Игры</a>
+                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Games">Игры</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Rating"><i class="nc-icon nc-book-bookmark"></i>Рейтинг</a>
+                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Rating">Рейтинг</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Annotation"><i class="nc-icon nc-book-bookmark"></i>Аннотации</a>
+                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Annotation">Аннотации</a>
                     </li>
                     <li class="nav-item">
                         <a asp-area="" asp-controller="Home" asp-action="Index" class="btn btn-success btn-round">Регистрация</a>
                     </li>
                     <li class="nav-item">
-                        <a asp-area="" asp-controller="Home" asp-action="Index" class="btn btn-primary btn-round">Авторизация</a>
+                        <a asp-area="" asp-controller="Home" asp-action="Index" class="btn btn-primary btn-round bgColorBlue">Авторизация</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
     <div>
-        <partial name="_CookieConsentPartial" />
-        <main role="main" class="pb-3">
+        <main role="main" class="pb-0">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2019 - YourAssistant - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    <div class="footer" style="font-size: 18px;">
+        <br>
+
+        <div class="container d-flex justify-content-center ">
+
+            <div class="col-sm-4 text-center">
+                <br>
+                <h5 class="text-grey font-weight-bolder">Важная инфа</h5>
+                <ul class="list-unstyled font-weight-bolder nav-item" data-turbolinks="false">
+                    <li><a href="/presentation">Кто?</a></li>
+                    <li><a href="/templates/free">Где?</a></li>
+                    <li><a href="/templates/premium">Когда?</a></li>
+                </ul>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="d-flex justify-content-center">
+
+                    <div class="social-area">
+                        <div class="d-flex flex-column text-center ">
+                            <div class="d-flex justify-content-center">
+                                <div class="wrapper2 exmp3">
+                                    <img src="~/img/icon/money3.png" class="img-thumbnail rounded-circle">
+                                </div>
+                            </div>
+
+                            <a href="https://online.sberbank.ru">Не оставляйте нас голодными</a>
+                        </div>
+
+                        <br>
+                        <div class=" d-flex justify-content-center">
+                            <a itemprop="sameAs" href="https://github.com/creativetimofficial"
+                               class="m-1 btn btn-default btn-social btn-round  btnColor btn-primary" rel="publisher" target="_blank">
+                                <i class="fa fa-github fa-lg"></i>
+                            </a>
+
+                            <a itemprop="sameAs" href="https://vk.com/mk_99"
+                               class="m-1 btn btn-default btn-social btn-round btnColor btn-primary" target="_blank">
+                                <i class="fa fa-vk fa-lg"></i>
+                            </a>
+                            <a itemprop="sameAs" href="https://twitter.com/CreativeTim"
+                               class="m-1 btn btn-default btn-social btn-round btnColor btn-primary" target="_blank">
+                                <i class="fa fa-twitter fa-lg"></i>
+                            </a>
+                            <a itemprop="sameAs" href="https://www.instagram.com/creativetimofficial/"
+                               class="m-1 btn btn-default btn-social btn-round btnColor btn-primary" target="_blank">
+                                <i class="fa fa-instagram fa-lg"></i>
+                            </a>
+                            <a itemprop="sameAs" href="https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w"
+                               class=" m-1 btn btn-default btn-social btn-round btnColor btn-primary" target="_blank">
+                                <i class="fa fa-youtube fa-lg"></i>
+                            </a>
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-sm-4 text-center">
+                <br>
+                <h5 class="text-grey font-weight-bolder">О нас</h5>
+                <ul class="list-unstyled" data-turbolinks="false">
+                    <p>Сайт разработан студентами НИ ТПУ</p>
+                    <p>Контакты: </p>
+                    <p>mvk40@tpu.ru</p>
+                    <p>aas422@tpu.ru</p>
+                    <p>Россия, Томская область, г.Томск.</p>
+                </ul>
+            </div>
+
+            <hr>
         </div>
-    </footer>
+
+    </div> 
+    
+
+    <div class="footer bg-dark text-white d-flex justify-content-center">
+        <div class="footer-inner">
+            <div class="footer-content">
+                <span class="bigger-150"><span class="purple bolder"> &copy; 2019 YourAssistant |</span> <a asp-area="" asp-controller="Home" asp-action="Privacy"> Privacy </a> | Made for learning </span>
+               
+            </div>
+        </div>
+    </div>
+
 
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
