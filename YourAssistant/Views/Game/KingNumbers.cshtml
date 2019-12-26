@@ -1,0 +1,57 @@
+﻿<h1>KingNumbers</h1>
+
+@*<form method="post">*@
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <p class="text-center">Легко</p>
+                <div class="row">
+                    <div class="col-6">
+                        <p>Разрядность - 8</p>
+                    </div>
+                    <div class="col-6">
+                        <p>Количество разрядов - 3</p>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-light" style="background: linear-gradient(to top, #5d5c5c, #ffffff) ;" asp-controller="Game" asp-action="KingNumbers" asp-route-numbersSystem="8" asp-route-numbersCount="3">Легко</a>
+                </div>
+            </div>
+            <div class="col-4">
+                <p class="text-center">Нормально</p>
+                <div class="row">
+                    <div class="col-6">
+                        <p>Разрядность - 10</p>
+                    </div>
+                    <div class="col-6">
+                        <p>Количество разрядов - 4</p>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-light" style="background: linear-gradient(to top, #5d5c5c, #ffffff) ;" asp-controller="Game" asp-action="KingNumbers" asp-route-numbersSystem="10" asp-route-numbersCount="4">Нормально</a>
+                </div>
+            </div>
+            <div class="col-4">
+                <p class="text-center">Сложно</p>
+                <div class="row">
+                    <div class="col-6">
+                        <p>Разрядность - 16</p>
+                    </div>
+                    <div class="col-6">
+                        <p>Количество разрядов - 5</p>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-light" style="background: linear-gradient(to top, #5d5c5c, #ffffff) ;" asp-controller="Game" asp-action="KingNumbers" asp-route-numbersSystem="16" asp-route-numbersCount="5">Сложно</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+@*</form>*@
+
+@section scripts{
+
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

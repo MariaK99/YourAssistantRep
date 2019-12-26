@@ -15,21 +15,21 @@ namespace YourAssistant
                 context.Games.AddRange(
                     new Game
                     {
-                        Name = "Быки и коровы",
-                        Image = "CowBulls.png",
-                        Description = "Быки и коровы это очень интересная игра"
+                        Name = "KingNumbers",
+                        Image = "Images/Games/KingNumbers.jpg",
+                        Description = "Королевские числа — логическая игра, в ходе которой за несколько попыток один из игроков должен определить, какое число задумал другой игрок..."
                     },
                     new Game
                     {
-                        Name = "Камушки",
-                        Image = "Stones.png",
-                        Description = "Камушки это тоже очень интересная игра"
+                        Name = "Стратег",
+                        Image = "Images/Games/Strateg.png",
+                        Description = "Сратег - игра, в которой предлагается, построив выйгрышную стратегию, обыграть компьютер, который настроен только на победу..."
                     },
                     new Game
                     {
-                        Name = "Матрица",
-                        Image = "Matrix.png",
-                        Description = "Это впрям вообще интересная игра"
+                        Name = "Переводчик",
+                        Image = "Images/Games/Translator.png",
+                        Description = "Переводчик - игра, в которой требуется за определенное время перевести число из одной системы счисления в другую..."
                     });
                 context.SaveChanges();
             }
