@@ -19,18 +19,12 @@ namespace YourAssistant.Controllers
         {
             _games = iGame;
         }
-        
-        [Authorize]
-        public IActionResult Index()
-        {
-            return Content(User.Identity.Name);
-        }
-        /*
+
         public IActionResult Index()
         {
             return View();
         }
-        */
+
         public IActionResult Rating()
         {
             return View();
