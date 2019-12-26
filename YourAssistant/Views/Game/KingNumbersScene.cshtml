@@ -1,0 +1,30 @@
+﻿@model List<YourAssistant.Models.Games.UserNumber>
+
+@{
+    ViewData["Title"] = "KingNumbersScene";
+}
+
+<h1>KingNumbersScene</h1>
+
+@foreach (YourAssistant.Models.Games.UserNumber number in Model)
+{
+    <div class="d-flex flex-row">
+        <div class="p-3">@number.UserLine</div>
+        <div class="p-1">@number.queens</div>
+        <div class="p-1">@number.kings</div>
+    </div>
+}
+
+<form method="post" asp-antiforgery="true" asp-action="KingNumbersScene" asp-controller="Game">
+    <div>
+        <div class="validation" asp-validation-summary="ModelOnly"></div>
+        <div>
+            <p>Введите строку </p>
+            <input type="text" name="UserLine" />
+        </div>
+        <div>
+            <input type="submit" value="Save" />
+        </div>
+    </div>
+</form>
+

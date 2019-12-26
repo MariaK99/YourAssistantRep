@@ -1,67 +1,27 @@
-﻿
-@{
-    ViewData["Title"] = "Games";
-}
-        @*<div>
-            <h1>Страница с играми</h1>
-        </div>*@
-<div class="page-header section-dark" style="background-image: url('./assets/img/antoine-barres.jpg')">
+﻿<div class="page-header section-dark" style="background-image: url('./assets/img/antoine-barres.jpg')">
     <div class="container">
         <div class="row">
-
-            <div class="col-md-4 col-sm-6">
-                <div class="box">
-                    <img src="https://bootstraptema.ru/images/demo/600x600/demo1.jpeg" alt="1">
-                    <div class="box-content">
-                        <h3 class="title">Королевские числа</h3>
-                        <br>
-                        <span class="post">
-                            Королевские числа — логическая игра, в ходе которой за несколько
-                            попыток один из игроков должен определить, какое число задумал другой игрок...
-                        </span>
+            @{ 
+                foreach (Game game in Model.AllGames)
+                {
+                    <div class="col-md-4 col-sm-6">
+                        <div class="box">
+                            <img src="@game.Image" alt="1">
+                            <div class="box-content">
+                                <h3 class="title">@game.Name</h3>
+                                <br>
+                                <span class="post">
+                                    @game.Description
+                                </span>
+                            </div>
+                            <ul class="icon">
+                                <li><a asp-controller="Game" asp-action="@game.Name"><i class="fa fa-chevron-right"></i></a></li>
+                                <li><a href="Annotation"><i class="fa fa-book"></i></a></li>
+                            </ul>
+                        </div>
                     </div>
-                    <ul class="icon">
-                        <li><a href="#"><i class="fa fa-chevron-right"></i></a></li>
-                        <li><a href="Annotation"><i class="fa fa-book"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="col-md-4 col-sm-6">
-                <div class="box">
-                    <img src="https://bootstraptema.ru/images/demo/600x600/demo2.jpeg" alt="2">
-                    <div class="box-content">
-                        <h3 class="title">Стратег</h3>
-                        <br>
-                        <span class="post">
-                            Сратег - игра, в которой предлагается, построив выйгрышную стратегию, обыграть
-                            компьютер, который настроен только на победу...
-                        </span>
-                    </div>
-                    <ul class="icon">
-                        <li><a href="#"><i class="fa fa-chevron-right"></i></a></li>
-                        <li><a href="Annotation"><i class="fa fa-book"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="col-md-4 col-sm-6">
-                <div class="box">
-                    <img src="https://bootstraptema.ru/images/demo/600x600/demo3.jpeg" alt="3">
-                    <div class="box-content">
-                        <h3 class="title">Переводчик</h3>
-                        <br>
-                        <span class="post">
-                            Переводчик - игра, в которой требуется за определенное время
-                            перевести число из одной системы счисления в другую...
-                        </span>
-                    </div>
-                    <ul class="icon">
-                        <li><a href="#"><i class="fa fa-chevron-right"></i></a></li>
-                        <li><a href="Annotation"><i class="fa fa-book"></i></a></li>
-                    </ul>
-                </div>
-            </div>
+                }
+            }
         </div>
     </div>
 </div>
