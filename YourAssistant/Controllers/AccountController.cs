@@ -34,7 +34,7 @@ namespace YourAssistant.Controllers
                 User user = await db.Users.FirstOrDefaultAsync(u => u.Email == model.Email && u.Password == model.Password);
                 if (user != null)
                 {
-                    await Authenticate(model.Email); // аутентификация
+                    await Authenticate(user.Name); // аутентификация
 
                     return RedirectToAction("Index", "Home");
                 }
@@ -60,7 +60,7 @@ namespace YourAssistant.Controllers
                     db.Users.Add(new User { Email = model.Email, Password = model.Password, Name = model.Name });
                     await db.SaveChangesAsync();
 
-                    await Authenticate(model.Email); // аутентификация
+                    await Authenticate(model.Name); // аутентификация
 
                     return RedirectToAction("Index", "Home");
                 }

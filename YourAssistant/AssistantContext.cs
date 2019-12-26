@@ -30,6 +30,7 @@ namespace YourAssistant
             modelBuilder.Entity<User>().HasAlternateKey(u => u.Name);
             modelBuilder.Entity<Game>().HasAlternateKey(g => g.Name);
             modelBuilder.Entity<GameLevel>().HasAlternateKey(l => l.Name);
+            modelBuilder.Entity<LevelGameRating>().HasAlternateKey(lr => lr.Id);
         }
     }
 }
