@@ -18,27 +18,28 @@
 </head>
 
 
-<body class="index-page sidebar-collapse">
+<body class="index-page sidebar-collapse" >
     <!-- Modal -->
     <div class="modal fade" id="myModal">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Внимание!!!</h5>
-                    <button type="button" class="close" data-dismiss="modal">
+                    Внимание!!!
+                    <button type="button" class="close" data-dismiss="modal" title="Закрыть">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p>К сожалению вы не можете начать играть, пока не авторизуетесь</p>
+                    <p>К сожалению, данный раздел для вас недоступен. Авторизуйтесь, чтобы открыть доступ. </p>
                 </div>
                 <div class="modal-footer">
+                    <br>
                     <form class="form-horizontal">
                         <a class="btn btn-success" asp-action="Login" asp-controller="Account">Войти</a>
                         <a class="btn btn-primary" asp-action="Register" asp-controller="Account">Зарегистрироваться</a>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
                     </form>
                 </div>
+                <br />
             </div>
         </div>
     </div>
@@ -46,7 +47,7 @@
     <nav class="navbar navbar-expand-lg fixed-top navbar-transparent" color-on-scroll="300">
         <div class="container">
             <div class="navbar-translate">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index" rel="tooltip" title="Coded by Creative Tim" data-placement="bottom" target="_blank">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index" rel="tooltip" title="Перейти на главную" data-placement="bottom" target="_blank">
                     Your Assistant
                 </a>
             </div>
@@ -59,7 +60,7 @@
                     @if (User.Identity.IsAuthenticated)
                     {
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Games"><i class="nc-icon nc-book-bookmark"></i>Игры</a>
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Games">Игры</a>
                         </li>
                     }
                     else
@@ -83,7 +84,7 @@
                         </li>
                         <li class="nav-item">
                             <form class="form-inline" method="post" asp-controller="Account" asp-action="Logout">
-                                <input class="btn btn-outline-danger ml-2" type="submit" value="Sign out" />
+                                <input class="btn btn-outline-danger ml-2" type="submit" value="Выйти" />
                             </form>
                         </li>
                     }
