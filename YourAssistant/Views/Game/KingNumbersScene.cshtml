@@ -1,12 +1,10 @@
-﻿@model List<YourAssistant.Models.Games.UserNumber>
+﻿@model (List<YourAssistant.Models.Games.UserNumber> number, string dificult, int numberCount, int numberSystem)
 
 @{
     ViewData["Title"] = "KingNumbersScene";
 }
 
-<h1>KingNumbersScene</h1>
-
-@foreach (YourAssistant.Models.Games.UserNumber number in Model)
+@foreach (YourAssistant.Models.Games.UserNumber number in Model.number)
 {
     <div class="d-flex flex-row">
         <div class="p-3">@number.UserLine</div>

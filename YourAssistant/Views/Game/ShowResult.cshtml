@@ -1,0 +1,14 @@
+﻿@model (int score, int step, float multiply)
+
+@{
+    ViewData["Title"] = "ShowResult";
+}
+    <div class="page-header section-dark" style="background-image: url('./assets/img/antoine-barres.jpg')">
+        <p>Поздравляем вы победили</p>
+        <p>Ваш итоговый счёт - @Model.score</p>
+        <p>Количество сделанных ходов - @Model.step</p>
+        <p>Множитель сложности - @Model.multiply</p>
+        <a asp-area="" asp-controller="Game" asp-action="KingNumbers" class="btn btn-primary btn-round">Играть ишо</a>
+        <a asp-area="" asp-controller="Home" asp-action="Rating" class="btn btn-primary btn-round">Смареть рэитенг</a>
+    </div>
+

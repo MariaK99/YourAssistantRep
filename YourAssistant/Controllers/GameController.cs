@@ -18,6 +18,12 @@ namespace YourAssistant.Controllers
 
         private static string _correct;
 
+        private static string dificult;
+
+        private static int numberCount;
+
+        private static int numberSystem;
+
         private AssistantContext db;
 
         public GameController(AssistantContext context)
@@ -43,6 +49,14 @@ namespace YourAssistant.Controllers
                 };
                 number.GenerateNewNumber();
                 _correct = number.Line;
+                if (numbersCount == 3)
+                    dificult = "Легко";
+                else if (numbersCount == 4)
+                    dificult = "Нормально";
+                else
+                    dificult = "Сложно";
+                numberCount = numbersCount;
+                numberSystem = numbersSystem;
                 return RedirectToAction("KingNumbersScene", "Game");
             }
             else                      
@@ -53,7 +67,7 @@ namespace YourAssistant.Controllers
         public IActionResult KingNumbersScene()
         {
             numbers = new List<UserNumber>();
-            return View(numbers);
+            return View((numbers, dificult, numberCount, numberSystem));
         }
         
         [HttpPost]
@@ -102,6 +116,8 @@ namespace YourAssistant.Controllers
                 foreach(LevelGameRating dbRating in db.LevelRating)
                 {
                     dbRating.User = db.Users.FirstOrDefault(u => u.Id == db.LevelRating.FirstOrDefault(lr => lr.Id == dbRating.Id).User.Id);
+                    dbRating.Level = db.Levels.FirstOrDefault(l => l.Id == db.LevelRating.FirstOrDefault(lr => lr.Id == dbRating.Id).Level.Id);
+                    dbRating.Game = db.Games.FirstOrDefault(g => g.Id == db.LevelRating.FirstOrDefault(lr => lr.Id == dbRating.Id).Game.Id);
                     if (dbRating.Game.Id==game.Id && dbRating.Level.Id==level.Id && dbRating.User.Name == user.Name)
                     {
                         if (dbRating.Points < rating.Points)
@@ -113,13 +129,18 @@ namespace YourAssistant.Controllers
                 if (k == 0)
                     db.LevelRating.Add(rating);
                 await db.SaveChangesAsync();
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("ShowResult", "Game", new { score = rating.Points, step = numbers.Count, multiply = rating.Level.PointRate });
             }
             else
             {
-                return View(numbers);
+                return View((numbers, dificult, numberCount, numberSystem));
             }
         }
-        
+
+        [HttpGet]
+        public IActionResult ShowResult(int score, int step, float multiply)
+        {
+            return View((score, step, multiply));
+        }
     }
 }
