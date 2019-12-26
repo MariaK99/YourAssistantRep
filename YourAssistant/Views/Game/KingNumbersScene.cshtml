@@ -4,25 +4,31 @@
     ViewData["Title"] = "KingNumbersScene";
 }
 
-@foreach (YourAssistant.Models.Games.UserNumber number in Model.number)
-{
-    <div class="d-flex flex-row">
-        <div class="p-3">@number.UserLine</div>
-        <div class="p-1">@number.queens</div>
-        <div class="p-1">@number.kings</div>
+    <div class="page-header section-dark" style="background-image: url('./assets/img/antoine-barres.jpg')">
+        <h1>KingNumbersScene</h1>
+        <h1>KingNumbersScene</h1>
+        <h2>Сложность игры - @Model.dificult</h2>
+        <h2>Количество разрядов - @Model.numberCount</h2>
+        <h2>Размерность системы счисления - @Model.numberSystem</h2>
+        @foreach (YourAssistant.Models.Games.UserNumber number in Model.number)
+        {
+            <div class="d-flex flex-row">
+                <div class="p-3">@number.UserLine</div>
+                <div class="p-1">@number.queens</div>
+                <div class="p-1">@number.kings</div>
+            </div>
+        }
+        <form method="post" asp-antiforgery="true" asp-action="KingNumbersScene" asp-controller="Game">
+            <div>
+                <div class="validation" asp-validation-summary="ModelOnly"></div>
+                <div>
+                    <p>Введите строку </p>
+                    <input type="text" name="UserLine" />
+                </div>
+                <div>
+                    <input type="submit" value="Save" />
+                </div>
+            </div>
+        </form>
     </div>
-}
-
-<form method="post" asp-antiforgery="true" asp-action="KingNumbersScene" asp-controller="Game">
-    <div>
-        <div class="validation" asp-validation-summary="ModelOnly"></div>
-        <div>
-            <p>Введите строку </p>
-            <input type="text" name="UserLine" />
-        </div>
-        <div>
-            <input type="submit" value="Save" />
-        </div>
-    </div>
-</form>
 
