@@ -56,13 +56,17 @@ namespace YourAssistant.Controllers
                 User user = await db.Users.FirstOrDefaultAsync(u => u.Email == model.Email);
                 if (user == null)
                 {
-                    // добавляем пользователя в бд
-                    db.Users.Add(new User { Email = model.Email, Password = model.Password, Name = model.Name });
-                    await db.SaveChangesAsync();
+                    user = await db.Users.FirstOrDefaultAsync(u => u.Name == model.Name);
+                    if(user ==null)
+                    {
+                        // добавляем пользователя в бд
+                        db.Users.Add(new User { Email = model.Email, Password = model.Password, Name = model.Name });
+                        await db.SaveChangesAsync();
 
-                    await Authenticate(model.Name); // аутентификация
+                        await Authenticate(model.Name); // аутентификация
 
-                    return RedirectToAction("Index", "Home");
+                        return RedirectToAction("Index", "Home");
+                    }
                 }
                 else
                     ModelState.AddModelError("", "Некорректные логин и(или) пароль");

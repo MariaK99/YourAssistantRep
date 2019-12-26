@@ -15,9 +15,12 @@ namespace YourAssistant.Controllers
     {
         private readonly IGame _games;
 
-        public HomeController(IGame iGame)
+        private AssistantContext db;
+
+        public HomeController(IGame iGame,AssistantContext context)
         {
             _games = iGame;
+            this.db = context;
         }
 
         public IActionResult Index()
@@ -27,7 +30,15 @@ namespace YourAssistant.Controllers
 
         public IActionResult Rating()
         {
-            return View();
+            List<LevelGameRating> gameRatings = db.LevelRating.OrderByDescending(lr => lr.Points).ToList();
+
+            foreach(LevelGameRating rating in gameRatings)
+            {
+                rating.Level = db.Levels.FirstOrDefault(l => l.Id == db.LevelRating.FirstOrDefault(lr => lr.Id == rating.Id).Level.Id);
+                rating.User = db.Users.FirstOrDefault(u => u.Id == db.LevelRating.FirstOrDefault(lr => lr.Id == rating.Id).User.Id);
+                rating.Game = db.Games.FirstOrDefault(g => g.Id == db.LevelRating.FirstOrDefault(lr => lr.Id == rating.Id).Game.Id);
+            }
+            return View(gameRatings);
         }
 
         //[Route("Home/Games")]
