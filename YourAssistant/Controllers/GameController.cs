@@ -72,6 +72,7 @@ namespace YourAssistant.Controllers
                     }
                 }
             }
+            numbers.Add(number);
             if (number.kings == number.UserLine.Length)
             {
                 Game game = db.Games.FirstOrDefault(g => g.Id == 1);
@@ -96,13 +97,26 @@ namespace YourAssistant.Controllers
                     User = user,
                     Points = (int)(100 / Math.Sqrt(numbers.Count) * level.PointRate)
                 };
-                db.LevelRating.Add(rating);
+                int k = 0;
+
+                foreach(LevelGameRating dbRating in db.LevelRating)
+                {
+                    dbRating.User = db.Users.FirstOrDefault(u => u.Id == db.LevelRating.FirstOrDefault(lr => lr.Id == dbRating.Id).User.Id);
+                    if (dbRating.Game.Id==game.Id && dbRating.Level.Id==level.Id && dbRating.User.Name == user.Name)
+                    {
+                        if (dbRating.Points < rating.Points)
+                            dbRating.Points = rating.Points;
+                        k = -1;
+                        break;
+                    }
+                }
+                if (k == 0)
+                    db.LevelRating.Add(rating);
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index", "Home");
             }
             else
             {
-                numbers.Add(number);
                 return View(numbers);
             }
         }

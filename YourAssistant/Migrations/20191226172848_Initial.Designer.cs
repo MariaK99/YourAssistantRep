@@ -10,7 +10,7 @@ using YourAssistant;
 namespace YourAssistant.Migrations
 {
     [DbContext(typeof(AssistantContext))]
-    [Migration("20191028140334_Initial")]
+    [Migration("20191226172848_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
