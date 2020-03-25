@@ -4,31 +4,49 @@
     ViewData["Title"] = "KingNumbersScene";
 }
 
-    <div class="page-header section-dark" style="background-image: url('./assets/img/antoine-barres.jpg')">
-        <h1>KingNumbersScene</h1>
-        <h1>KingNumbersScene</h1>
-        <h2>Сложность игры - @Model.dificult</h2>
-        <h2>Количество разрядов - @Model.numberCount</h2>
-        <h2>Размерность системы счисления - @Model.numberSystem</h2>
-        @foreach (YourAssistant.Models.Games.UserNumber number in Model.number)
-        {
-            <div class="d-flex flex-row">
-                <div class="p-3">@number.UserLine</div>
-                <div class="p-1">@number.queens</div>
-                <div class="p-1">@number.kings</div>
+<div class="page-header section-dark" style="background-image: url('/assets/img/castle1.jpg')" ; width: 100%;>
+
+    <div class="container" style="color: white">
+        
+        
+        <div class="container" style="background: linear-gradient(270deg, rgba(255,255,255,0.004) 0%, rgba(0,27,51,0.6) 100%)" ;>
+            <div class="text-center">
+                <h2 class="text-white font-weight-bolder display-2">Королевские числа</h2>
             </div>
-        }
-        <form method="post" asp-antiforgery="true" asp-action="KingNumbersScene" asp-controller="Game">
-            <div>
-                <div class="validation" asp-validation-summary="ModelOnly"></div>
-                <div>
-                    <p>Введите строку </p>
-                    <input type="text" name="UserLine" />
+            <br />
+            <h4>Сложность игры - @Model.dificult</h4>
+            <h4>Количество разрядов - @Model.numberCount</h4>
+            <h4>Размерность системы счисления - @Model.numberSystem</h4>
+            @foreach (YourAssistant.Models.Games.UserNumber number in Model.number)
+            {
+                <div class="d-flex flex-row">
+                    <div class="p-3" style="font-size:40px">@number.UserLine</div>
+                    <div class="p-1" style="font-size:20px">@number.queens принцесс</div>
+                    <div class="p-1" style="font-size:20px">@number.kings королей </div>
                 </div>
+                <br />
+            }
+            <form method="post" asp-antiforgery="true" asp-action="KingNumbersScene" asp-controller="Game">
                 <div>
-                    <input type="submit" value="Save" />
+                    <div class="validation" asp-validation-summary="ModelOnly"></div>
+                    <br />
+                    <div>
+                        <p>Введите строку </p>
+                        <input type="text" name="UserLine" class="form-control col-lg-3" placeholder="Ваша строка" />
+                    </div>
+                    <br />
+                    <div>
+                        <input type="submit" value="Проверить" class="btn btn-primary btn-round">
+                    </div>
                 </div>
-            </div>
-        </form>
+            </form>
+            <br>
+        </div>
+    </div>
     </div>
 
+<div class="" style="background: linear-gradient(0deg, rgba(255,255,255,0.8) 0%, rgba(14,27,51,1) 100%);">
+
+    <br />
+    <br />
+</div>

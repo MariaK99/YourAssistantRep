@@ -4,40 +4,113 @@
     ViewData["Title"] = "Rating";
 }
 
-    <div class="page-header section-dark" style="background-image: url('./assets/img/antoine-barres.jpg')">
-        <h1>Страница с рейтингом</h1>
-        <h2>Низкая сложность</h2>
-        @foreach (LevelGameRating rating in Model)
-        {
-            if (rating.Level.Name == "Легко")
-            {
-                <div class="d-flex flex-row">
-                    <div class="p-3">@rating.User.Name</div>
-                    <div class="p-1">@rating.Points</div>
-                </div>
-            }
-        }
-        <h2>Средняя сложность</h2>
-        @foreach (LevelGameRating rating in Model)
-        {
-            if (rating.Level.Name == "Нормально")
-            {
-                <div class="d-flex flex-row">
-                    <div class="p-3">@rating.User.Name</div>
-                    <div class="p-1">@rating.Points</div>
-                </div>
-            }
-        }
-        <h2>Высокая сложность</h2>
-        @foreach (LevelGameRating rating in Model)
-        {
-            if (rating.Level.Name == "Сложно")
-            {
-                <div class="d-flex flex-row">
-                    <div class="p-3">@rating.User.Name</div>
-                    <div class="p-1">@rating.Points</div>
-                </div>
-            }
-        }
-    </div>
 
+    <div class="page-header section-dark" style="background-image: url('/assets/img/castle1.jpg')"; width: 100%;>
+
+        <div class="container" style="color: white">
+            <div class="text-center ">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <h2 class="display-2 font-weight-bolder display-2">Страница с рейтингом</h2>
+                <br />
+                <br />
+                <br />
+            </div>
+            <div class="text-white">
+                <h2>Низкая сложность</h2>
+                <br>
+                <div class="d-flex justify-content-center text-center ">
+                    <table>
+                        <tr>
+                            <th>Место</th>
+                            <th>Никнейм</th>
+                            <th>Кол-во баллов</th>
+                        </tr>
+
+                        @{int c = 0;
+                            @foreach (LevelGameRating rating in Model)
+                            {
+                                if (rating.Level.Name == "Легко")
+                                {
+                                    c++;
+                                    <tr>
+                                        <td>@c</td>
+                                        <td>@rating.User.Name</td>
+                                        <td>@rating.Points</td>
+                                    </tr>
+                                }
+                            }
+                        }
+
+                    </table>
+                </div>
+
+            </div>
+            <div class="text-white">
+                <h2>Средняя сложность</h2>
+                <br>
+                <div class="d-flex justify-content-center text-center ">
+                    <table>
+                        <tr>
+                            <th>Место</th>
+                            <th>Никнейм</th>
+                            <th>Кол-во баллов</th>
+                        </tr>
+                        @{ c = 0;
+                            @foreach (LevelGameRating rating in Model)
+                            {
+                                if (rating.Level.Name == "Нормально")
+                                {
+                                    c++;
+                                    <tr>
+                                        <td>@c</td>
+                                        <td>@rating.User.Name</td>
+                                        <td>@rating.Points</td>
+                                    </tr>
+                                }
+                            }
+                       }
+
+                    </table>
+                </div>
+            </div>
+            <div>
+                <h2>Высокая сложность</h2>
+                <br>
+                <div class="d-flex justify-content-center text-center ">
+                    <table>
+                        <tr>
+                            <th>Место</th>
+                            <th>Никнейм</th>
+                            <th>Кол-во баллов</th>
+                        </tr>
+                        @{c = 0;
+                            foreach (LevelGameRating rating in Model)
+                            {
+                                if (rating.Level.Name == "Сложно")
+                                {
+                                    c++;
+                                    <tr>
+                                        <td>@c</td>
+                                        <td>@rating.User.Name</td>
+                                        <td>@rating.Points</td>
+                                    </tr>
+                                }
+                            }
+                        }
+
+                    </table>
+                </div>
+            </div>
+            <br />
+        </div>
+    </div>
+    <div class="" style="background: linear-gradient(0deg, rgba(255,255,255,0.8) 0%, rgba(14,27,51,1) 100%);">
+
+        <br />
+        <br />
+    </div>

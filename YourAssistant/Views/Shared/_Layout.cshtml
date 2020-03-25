@@ -46,8 +46,9 @@
     <nav class="navbar navbar-expand-lg fixed-top navbar-transparent" color-on-scroll="300">
         <div class="container">
             <div class="navbar-translate">
-                <img src="~/assets/img//favicon.ico">
+                
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index" title="Перейти на главную">
+                    <img src="~/assets/img//white_logo (1).ico">
                     Your Assistant
                 </a>
             </div>
@@ -115,11 +116,17 @@
             <div class="col-sm-4 text-center">
                 <br>
                 <h5 class="text-grey font-weight-bolder">Важная инфа</h5>
-                <ul class="list-unstyled font-weight-bolder nav-item" data-turbolinks="false">
-                    <li><a href="/presentation">Кто?</a></li>
-                    <li><a href="/templates/free">Где?</a></li>
-                    <li><a href="/templates/premium">Когда?</a></li>
-                </ul>
+                <div class="list-unstyled font-weight-bolder nav-item" data-turbolinks="false">
+                    <p>
+                        Данный сайт разработан в учебных целях.
+                    </p>
+                    <p>
+                        Разработчики очень старались
+                    </p>
+                    <p>
+                        Играйте и развивайтесь вместе с YourAssistant
+                    </p>
+                </div>
             </div>
 
             <div class="col-sm-4">
@@ -127,13 +134,14 @@
 
                     <div class="social-area">
                         <div class="d-flex flex-column text-center ">
-                            <div class="d-flex justify-content-center">
-                                <div class="wrapper2 exmp3">
-                                    <img src="~/img/icon/money3.png" class="img-thumbnail rounded-circle">
+                            <a href="https://online.sberbank.ru">
+                                <div class="d-flex justify-content-center">
+                                    <div class="wrapper2 exmp3">
+                                        <img src="~/img/icon/money3.png" class="img-thumbnail rounded-circle">
+                                    </div>
                                 </div>
-                            </div>
-
-                            <a href="https://online.sberbank.ru">Не оставляйте нас голодными</a>
+                                Не оставляйте нас голодными
+                            </a>
                         </div>
 
                         <br>
@@ -171,13 +179,13 @@
             <div class="col-sm-4 text-center">
                 <br>
                 <h5 class="text-grey font-weight-bolder">О нас</h5>
-                <ul class="list-unstyled" data-turbolinks="false">
-                    <p>Сайт разработан студентами НИ ТПУ</p>
+                <div class="list-unstyled" data-turbolinks="false">
+                   <p>Сайт разработан студентами НИ ТПУ</p>
                     <p>Контакты: </p>
                     <p>mvk40@tpu.ru</p>
                     <p>aas422@tpu.ru</p>
-                    <p>Россия, Томская область, г.Томск.</p>
-                </ul>
+                    <p>Россия, Томская область, г. Томск.</p>
+                 </div>
             </div>
 
             <hr>

@@ -1,27 +1,41 @@
-﻿<div class="page-header section-dark" style="background-image: url('./assets/img/antoine-barres.jpg')">
-    <div class="container">
-        <div class="row">
-            @{
-                foreach (Game game in Model.AllGames)
-                {
-                    <div class="col-md-4 col-sm-6">
-                        <div class="box">
-                            <img src="@game.Image" alt="1">
-                            <div class="box-content">
-                                <h3 class="title">@game.Name</h3>
-                                <br>
-                                <span class="post">
-                                    @game.Description
-                                </span>
+﻿
+
+    <div class="page-header section-dark" style="background-image: url('/assets/img/castle1.jpg')" ; width: 100%;>
+
+        <div class="container" style="color: white">
+            <div class="text-center">
+                <h2 class="text-white font-weight-bolder display-2">Игры</h2>
+            </div>
+            <br>
+
+            <div class="row">
+
+                @{
+                    foreach (Game game in Model.AllGames)
+                    {
+                        <div class="col-md-4 col-sm-6">
+                            <div class="box">
+                                <img src="@game.Image" alt="1">
+                                <div class="box-content">
+                                    <h3 class="title">@game.Name</h3>
+                                    <br>
+                                    <span class="post">
+                                        @game.Description
+                                    </span>
+                                </div>
+                                <ul class="icon">
+                                    <li><a asp-controller="Game" asp-action="@game.Name"><i class="fa fa-chevron-right"></i></a></li>
+                                    <li><a href="Annotation"><i class="fa fa-book"></i></a></li>
+                                </ul>
                             </div>
-                            <ul class="icon">
-                                <li><a asp-controller="Game" asp-action="@game.Name"><i class="fa fa-chevron-right"></i></a></li>
-                                <li><a href="Annotation"><i class="fa fa-book"></i></a></li>
-                            </ul>
                         </div>
-                    </div>
+                    }
                 }
-            }
+            </div>
         </div>
     </div>
-</div>
+    <div class="" style="background: linear-gradient(0deg, rgba(255,255,255,0.8) 0%, rgba(14,27,51,1) 100%);">
+
+        <br />
+        <br />
+    </div>

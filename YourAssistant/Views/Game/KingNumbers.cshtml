@@ -1,59 +1,78 @@
-﻿<div class="page-header section-dark" style="background-image: url('./assets/img/antoine-barres.jpg')">
-    <h1>KingNumbers</h1>
+﻿
+<div class="page-header section-dark" style="background-image: url('/assets/img/castle1.jpg')" ; width: 100%;>
 
-    @*<form method="post">*@
-    <div class="container">
-        <div class="row">
-            <div class="col-4">
-                <p class="text-center">Легко</p>
-                <div class="row">
-                    <div class="col-6">
-                        <p>Разрядность - 8</p>
-                    </div>
-                    <div class="col-6">
-                        <p>Количество разрядов - 3</p>
-                    </div>
-                </div>
-                <div>
-                    <a class="btn btn-light" style="background: linear-gradient(to top, #5d5c5c, #ffffff) ;" asp-controller="Game" asp-action="KingNumbers" asp-route-numbersSystem="8" asp-route-numbersCount="3">Легко</a>
-                </div>
+    <div class="container" style="color: white">
+        <div class="container" style="background: linear-gradient(270deg, rgba(255,255,255,0.004) 0%, rgba(0,27,51,0.6) 100%)" ;>
+            <div class="text-center">
+                <h2 class="text-white font-weight-bolder display-2">Королевские числа</h2>
             </div>
-            <div class="col-4">
-                <p class="text-center">Нормально</p>
-                <div class="row">
-                    <div class="col-6">
-                        <p>Разрядность - 10</p>
-                    </div>
-                    <div class="col-6">
-                        <p>Количество разрядов - 4</p>
-                    </div>
-                </div>
-                <div>
-                    <a class="btn btn-light" style="background: linear-gradient(to top, #5d5c5c, #ffffff) ;" asp-controller="Game" asp-action="KingNumbers" asp-route-numbersSystem="10" asp-route-numbersCount="4">Нормально</a>
-                </div>
-            </div>
-            <div class="col-4">
-                <p class="text-center">Сложно</p>
-                <div class="row">
-                    <div class="col-6">
-                        <p>Разрядность - 16</p>
-                    </div>
-                    <div class="col-6">
-                        <p>Количество разрядов - 5</p>
-                    </div>
-                </div>
-                <div>
-                    <a class="btn btn-light" style="background: linear-gradient(to top, #5d5c5c, #ffffff) ;" asp-controller="Game" asp-action="KingNumbers" asp-route-numbersSystem="16" asp-route-numbersCount="5">Сложно</a>
-                </div>
-            </div>
+            <br>
 
+            @*<form method="post">*@
+            <div class="container">
+                <div class="row">
+                    <div class="col-4">
+                        <h3 class="text-center">Легко</h3>
+                        <div class="row">
+                            <div class="col-6">
+                                <h4>Система счисления - 8</h4>
+                            </div>
+                            <div class="col-6">
+                                <h4>Количество разрядов - 3</h4>
+                            </div>
+                        </div>
+                        <br>
+                        <div>
+                            <a class="btn btn-outline-dark btn-primary" asp-controller="Game" asp-action="KingNumbers" asp-route-numbersSystem="8" asp-route-numbersCount="3">Легко</a>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <h3 class="text-center">Нормально</h3>
+                        <div class="row">
+                            <div class="col-6">
+                                <h4>Система счисления - 10</h4>
+                            </div>
+                            <div class="col-6">
+                                <h4>Количество разрядов - 4</h4>
+                            </div>
+                        </div>
+                        <br>
+                        <div>
+                            <a class="btn btn-outline-dark btn-primary" asp-controller="Game" asp-action="KingNumbers" asp-route-numbersSystem="10" asp-route-numbersCount="4">Нормально</a>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <h3 class="text-center">Сложно</h3>
+                        <div class="row">
+                            <div class="col-6">
+                                <h4>Система счисления - 16</h4>
+                            </div>
+                            <div class="col-6">
+                                <h4>Количество разрядов - 5</h4>
+                            </div>
+                        </div>
+                        <br>
+                        <div>
+                            <a class="btn btn-outline-dark btn-primary" asp-controller="Game" asp-action="KingNumbers" asp-route-numbersSystem="16" asp-route-numbersCount="5">Сложно</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <br/>
         </div>
+        </div>
+
     </div>
+<div class="" style="background: linear-gradient(0deg, rgba(255,255,255,0.8) 0%, rgba(14,27,51,1) 100%);">
+
+    <br />
+    <br />
 </div>
-    @*</form>*@
+@*</form>*@
 
-    @section scripts{
+@section scripts{
 
-        <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
-        <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
-    }
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
